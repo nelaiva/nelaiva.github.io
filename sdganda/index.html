@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD敢达OL - 真实机动战士对战体验与机体图鉴攻略</title>
+    <meta name="description" content="SD敢达OL官方攻略门户，提供最新机体评测、实战技巧、PVP战术分析、版本更新资讯及机体图鉴查询，助您在高达宇宙中称霸战场。">
+    <meta name="keywords" content="SD敢达OL,高达OL,SD敢达,高达攻略,高达机体,高达战斗模拟,高达OL评测">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #00a8ff;
+            --secondary-color: #2f3542;
+            --accent-color: #e84118;
+            --text-color: #2f3542;
+            --light-text: #f5f6fa;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-unit);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: #747d8c;
+            font-weight: 400;
+        }
+
+        .section-title a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0097e6;
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: white;
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/gundamhero/1600/900.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            background: white;
+            padding: 16px 0;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e1e1e1;
+            overflow-x: auto;
+        }
+
+        .nav-tabs ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-item {
+            padding: 8px 0;
+            cursor: pointer;
+            color: #747d8c;
+            font-weight: 600;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-item.active {
+            color: var(--primary-color);
+        }
+
+        .nav-item.active::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        /* News List */
+        .news-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .news-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+        }
+
+        .news-thumb {
+            width: 180px;
+            height: 120px;
+            border-radius: 6px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .news-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .news-category {
+            font-size: 12px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .news-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-meta {
+            font-size: 12px;
+            color: #a4b0be;
+            display: flex;
+            gap: 16px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f1f2f6;
+        }
+
+        .ranking-list {
+            counter-reset: ranking;
+        }
+
+        .ranking-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .ranking-item::before {
+            counter-increment: ranking;
+            content: counter(ranking);
+            position: absolute;
+            left: -24px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: #dfe4ea;
+            color: #747d8c;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .ranking-item:nth-child(1)::before { background: var(--accent-color); color: white; }
+        .ranking-item:nth-child(2)::before { background: #fbc531; color: white; }
+        .ranking-item:nth-child(3)::before { background: #747d8c; color: white; }
+
+        .ranking-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .ranking-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .ranking-info p {
+            font-size: 12px;
+            color: #a4b0be;
+        }
+
+        /* Section: Game Mechanics */
+        .section-mechanics {
+            background-color: white;
+            padding: 40px 0;
+            margin-bottom: 48px;
+        }
+
+        .mechanics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .mechanic-card {
+            text-align: center;
+            padding: 24px;
+            border: 1px solid #f1f2f6;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .mechanic-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(0,168,255,0.1);
+        }
+
+        .mechanic-icon {
+            width: 64px;
+            height: 64px;
+            background: #f1f2f6;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--primary-color);
+        }
+
+        .mechanic-card h3 {
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .mechanic-card p {
+            font-size: 14px;
+            color: #747d8c;
+        }
+
+        /* Section: Player Guide */
+        .guide-section {
+            margin-bottom: 48px;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .guide-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .guide-content {
+            padding: 16px;
+        }
+
+        .guide-content h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .guide-content p {
+            font-size: 13px;
+            color: #747d8c;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .guide-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #a4b0be;
+            padding-top: 12px;
+            border-top: 1px solid #f1f2f6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #a4b0be;
+            padding: 48px 0 24px;
+            margin-top: 48px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+                gap: 16px;
+            }
+
+            .nav-tabs {
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-tabs ul {
+                min-width: 500px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .mechanics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .news-card {
+                flex-direction: column;
+            }
+
+            .news-thumb {
+                width: 100%;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>SD</span>高达OL
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">机体图鉴</a></li>
+                <li><a href="#">战斗模拟</a></li>
+                <li><a href="#">战术论坛</a></li>
+                <li><a href="#">下载客户端</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="btn btn-outline">登录</button>
+            <button class="btn btn-primary">注册</button>
+        </div>
+    </div>
+</header>
+
+<div class="nav-tabs">
+    <div class="container">
+        <ul>
+            <li class="nav-item active">最新资讯</li>
+            <li class="nav-item">机体评测</li>
+            <li class="nav-item">PVP战术</li>
+            <li class="nav-item">新手入门</li>
+            <li class="nav-item">版本更新</li>
+        </ul>
+    </div>
+</div>
+
+<main class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tags">
+                    <span class="tag">全机体解锁</span>
+                    <span class="tag">新机甲登场</span>
+                    <span class="tag">S级评价</span>
+                </div>
+                <h1>驾驭经典机甲，体验真实高达战斗</h1>
+                <p>基于高达动画原作设计的硬核战斗模拟游戏，还原高达世界的机甲对决与战术配合。</p>
+                <button class="btn btn-primary" style="padding: 12px 32px; font-size: 18px;">立即试玩</button>
+                <button class="btn btn-outline" style="padding: 12px 32px; font-size: 18px; margin-left: 10px;">观看宣传片</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- News & Sidebar -->
+    <div class="content-grid">
+        <section class="news-section">
+            <div class="section-title">
+                <h2>最新动态</h2>
+                <a href="#">查看更多 &rarr;</a>
+            </div>
+            
+            <div class="news-list">
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/gundamnews1/300/200.jpg" alt="SD高达OL更新公告" class="news-thumb">
+                    <div class="news-info">
+                        <span class="news-category">官方公告</span>
+                        <h3 class="news-title"><a href="#">SD敢达OL 6.0版本更新：强袭自由高达限时登场</a></h3>
+                        <div class="news-meta">
+                            <span>2023-10-25</span>
+                            <span>浏览: 12.5k</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/gundamnews2/300/200.jpg" alt="PVP战术分析" class="news-thumb">
+                    <div class="news-info">
+                        <span class="news-category">战术攻略</span>
+                        <h3 class="news-title"><a href="#">中距离狙击流打法详解：如何在PVP中掌控战场节奏</a></h3>
+                        <div class="news-meta">
+                            <span>2023-10-24</span>
+                            <span>浏览: 8.2k</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/gundamnews3/300/200.jpg" alt="机体评测" class="news-thumb">
+                    <div class="news-info">
+                        <span class="news-category">机体评测</span>
+                        <h3 class="news-title"><a href="#">【深度评测】独角兽高达：觉醒模式下的实战表现分析</a></h3>
+                        <div class="news-meta">
+                            <span>2023-10-23</span>
+                            <span>浏览: 15.1k</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <img src="https://picsum.photos/seed/gundamnews4/300/200.jpg" alt="新手指南" class="news-thumb">
+                    <div class="news-info">
+                        <span class="news-category">新手指南</span>
+                        <h3 class="news-title"><a href="#">新手必看：从零开始打造你的专属高达战队</a></h3>
+                        <div class="news-meta">
+                            <span>2023-10-22</span>
+                            <span>浏览: 5.6k</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside>
+            <div class="sidebar-widget">
+                <h3 class="widget-title">热门机体排行</h3>
+                <div class="ranking-list">
+                    <div class="ranking-item">
+                        <img src="https://picsum.photos/seed/char/100/100.jpg" alt="百式" class="ranking-img">
+                        <div class="ranking-info">
+                            <h4>百式</h4>
+                            <p>射程远 / 集火强</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://picsum.photos/seed/zaku/100/100.jpg" alt="扎古II" class="ranking-img">
+                        <div class="ranking-info">
+                            <h4>扎古II Type-B</h4>
+                            <p>均衡 / 生存高</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://picsum.photos/seed/v2/100/100.jpg" alt="V2高达" class="ranking-img">
+                        <div class="ranking-info">
+                            <h4>V2高达</h4>
+                            <p>全能 / 防御强</p>
+                        </div>
+                    </div>
+                    <div class="ranking-item">
+                        <img src="https://picsum.photos/seed/nu/100/100.jpg" alt="独角兽" class="ranking-img">
+                        <div class="ranking-info">
+                            <h4>独角兽高达</h4>
+                            <p>爆发 / 觉醒流</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">下载专区</h3>
+                <ul style="padding-left: 20px; font-size: 14px; color: #57606f;">
+                    <li style="margin-bottom: 10px;">• Windows 10/11 官方客户端</li>
+                    <li style="margin-bottom: 10px;">• 1.5G 高速下载包</li>
+                    <li style="margin-bottom: 10px;">• 最新补丁 v6.0.2</li>
+                    <li style="margin-bottom: 10px;">• 安装向导与配置指南</li>
+                </ul>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 15px;">立即下载</button>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Game Mechanics Section -->
+    <section class="section-mechanics">
+        <div class="container">
+            <div class="section-title">
+                <h2>核心战斗系统</h2>
+                <a href="#">了解详情 &rarr;</a>
+            </div>
+            <div class="mechanics-grid">
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">🛡️</div>
+                    <h3>装甲与耐久</h3>
+                    <p>不同机体拥有独特的装甲结构与耐久度，了解弱点是生存的关键。</p>
+                </div>
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">🎯</div>
+                    <h3>射击与格斗</h3>
+                    <p>多种武器模组切换，近战格斗与远程射击的完美结合，讲究节奏感。</p>
+                </div>
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">⚡</div>
+                    <h3>机体觉醒</h3>
+                    <p>积累能量触发觉醒模式，机体性能大幅提升，扭转战局的神器。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy Guides Section -->
+    <section class="guide-section">
+        <div class="section-title">
+            <h2>玩家精选攻略</h2>
+            <a href="#">进入攻略库 &rarr;</a>
+        </div>
+        <div class="guide-grid">
+            <article class="guide-card">
+                <img src="https://picsum.photos/seed/gundamguide1/400/250.jpg" alt="强袭自由攻略" class="guide-img">
+                <div class="guide-content">
+                    <h3><a href="#">强袭自由高达：S级机体使用指南</a></h3>
+                    <p>详细解析光束军刀与高能光束步枪的连招技巧，以及如何利用飞行能力进行机动。</p>
+                    <div class="guide-footer">
+                        <span>作者: 战术大师</span>
+                        <span>评分: 9.8</span>
+                    </div>
+                </div>
+            </article>
+            <article class="guide-card">
+                <img src="https://picsum.photos/seed/gundamguide2/400/250.jpg" alt="强袭自由攻略" class="guide-img">
+                <div class="guide-content">
+                    <h3><a href="#">团队竞技：如何进行有效配合</a></h3>
+                    <p>团队战中架设炮台、吸引火力和侧翼包抄的战术分工详解。</p>
+                    <div class="guide-footer">
+                        <span>作者: 军团指挥官</span>
+                        <span>评分: 9.5</span>
+                    </div>
+                </div>
+            </article>
+            <article class="guide-card">
+                <img src="https://picsum.photos/seed/gundamguide3/400/250.jpg" alt="强袭自由攻略" class="guide-img">
+                <div class="guide-content">
+                    <h3><a href="#">机体改装推荐：提升胜率的关键</a></h3>
+                    <p>从核心组件到武器模组的改装思路，打造最适合自己操作习惯的机体。</p>
+                    <div class="guide-footer">
+                        <span>作者: 机械师</span>
+                        <span>评分: 9.2</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="margin-bottom: 20px;">
+                    <span>SD</span>高达OL
+                </a>
+                <p style="font-size: 14px; line-height: 1.8;">
+                    SD敢达OL是一款基于高达动画原作设计的硬核战斗模拟游戏。在这里，您可以驾驶经典机甲，体验真实的战场对抗，与全球玩家共同谱写高达传说。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">官方网站</a></li>
+                    <li><a href="#">玩家社区</a></li>
+                    <li><a href="#">在线客服</a></li>
+                    <li><a href="#">用户协议</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>游戏频道</h4>
+                <ul>
+                    <li><a href="#">机体图鉴</a></li>
+                    <li><a href="#">战术论坛</a></li>
+                    <li><a href="#">战绩查询</a></li>
+                    <li><a href="#">周边商城</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">Bilibili官方</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 SD敢达OL 攻略中心. All rights reserved. 本站为非官方网站，内容仅供参考。</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
