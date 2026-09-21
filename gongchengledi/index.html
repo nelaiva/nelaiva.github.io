@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攻城掠地官方版下载 - 三国策略手游与版本更新指南</title>
+    <meta name="description" content="提供攻城掠地官方版下载服务，包含最新版本更新内容、游戏特色介绍、新手入门攻略及下载注意事项。确保下载安全，体验原汁原味的三国策略战争。">
+    <meta name="keywords" content="攻城掠地官方版下载,攻城掠地,三国手游,策略游戏,手游下载">
+    <style>
+        :root {
+            --primary-color: #8B0000; /* 深红，象征战争与热血 */
+            --secondary-color: #D4AF37; /* 金色，象征权谋与荣耀 */
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: var(--spacing-lg);
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-download-nav {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .btn-download-nav:hover {
+            background-color: #6b0000;
+            color: white;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1a0b0b 0%, #4a1c1c 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: var(--spacing-md);
+            color: var(--secondary-color);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-actions {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: #1a0b0b;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        /* 版本信息与更新日志 */
+        .update-section {
+            padding: var(--spacing-lg) 0;
+            background-color: white;
+            border-top: 1px solid #eee;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        .update-card {
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .version-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        .update-content h3 {
+            font-size: 18px;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .update-content p {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .update-content ul {
+            padding-left: 20px;
+            color: var(--text-light);
+        }
+
+        .update-content li {
+            margin-bottom: 4px;
+        }
+
+        /* 游戏特色 */
+        .features-section {
+            padding: var(--spacing-lg) 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .feature-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            text-align: center;
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: var(--spacing-md);
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* 安装指南 */
+        .guide-section {
+            background-color: white;
+            padding: var(--spacing-lg) 0;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .guide-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        .step-item {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: #1a0b0b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .step-title {
+            font-weight: bold;
+            margin-bottom: var(--spacing-sm);
+            font-size: 16px;
+        }
+
+        .step-desc {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            padding: var(--spacing-lg) 0 var(--spacing-md);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: var(--spacing-md);
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: var(--spacing-md);
+            font-size: 13px;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 10px 0;
+            }
+
+            nav ul {
+                margin-top: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .step-item {
+                margin-bottom: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 广告位占位：页面顶部通栏 -->
+    <div style="width: 100%; height: 90px; background-color: #ddd; display: flex; align-items: center; justify-content: center; color: #999; font-size: 14px; margin-bottom: 10px;">
+        资源推荐位 (顶部通栏)
+    </div>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>⚔️</span> 攻城掠地
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#features">游戏特色</a></li>
+                    <li><a href="#updates">版本更新</a></li>
+                    <li><a href="#guide">下载指南</a></li>
+                </ul>
+            </nav>
+            <a href="#download" class="btn-download-nav">立即下载</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>攻城掠地官方版下载</h1>
+                <p>重温经典三国策略，招募名将，排兵布阵，一统天下。提供最新版本下载，安全稳定，无病毒，无广告。</p>
+                <div class="download-actions" id="download">
+                    <a href="#" class="btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Android 官方版下载
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        iOS 版本下载
+                    </a>
+                </div>
+                <p style="margin-top: 15px; font-size: 12px; opacity: 0.7;">支持安卓 5.0 以上 / iOS 10.0 以上系统</p>
+            </div>
+        </section>
+
+        <!-- 版本更新日志 -->
+        <section class="update-section" id="updates">
+            <div class="container">
+                <h2 class="section-title">最新版本更新</h2>
+                
+                <article class="update-card">
+                    <div class="update-content">
+                        <h3><span class="version-tag">V3.5.0</span> 荆州风云版本</h3>
+                        <p>版本更新日期：2023年10月15日</p>
+                        <ul>
+                            <li>新增“荆州争霸”跨服战玩法，参与即可获得限定时装。</li>
+                            <li>优化了名将觉醒系统的资源消耗，降低初期养成压力。</li>
+                            <li>修复了部分机型在PVP战斗中画面卡顿的问题。</li>
+                            <li>新增“军团仓库”功能，提升军团成员间的资源互助效率。</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="update-card">
+                    <div class="update-content">
+                        <h3><span class="version-tag">V3.4.2</span> 军团集结更新</h3>
+                        <p>版本更新日期：2023年08月20日</p>
+                        <ul>
+                            <li>开放军团占领高级城池功能，提升军团整体战力。</li>
+                            <li>调整了“攻城掠地”战役关卡难度曲线。</li>
+                            <li>优化了新手引导流程，帮助玩家更快上手。</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 游戏特色 -->
+        <section class="features-section" id="features">
+            <div class="container">
+                <h2 class="section-title">游戏核心特色</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>特色布阵系统</h3>
+                        <p>摒弃传统数值比拼，独创五行相克布阵玩法，考验玩家策略智慧，以弱胜强。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3>名将招募与养成</h3>
+                        <p>集结三国时期文臣武将，通过历练、进阶、觉醒等方式打造最强阵容。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏰</div>
+                        <h3>大型国战体验</h3>
+                        <p>千人同屏国战，实时语音指挥，攻城略地，争夺天下霸权。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📜</div>
+                        <h3>经典剧情还原</h3>
+                        <p>忠实还原三国历史事件，从黄巾之乱到赤壁之战，沉浸式体验乱世纷争。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 下载指南 -->
+        <section class="guide-section" id="guide">
+            <div class="container">
+                <h2 class="section-title">安全下载指南</h2>
+                <p style="text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto;">
+                    为了保障您的账号安全及设备性能，请通过以下正规渠道进行下载。避免安装非官方修改版，以免遭受病毒感染或封号风险。
+                </p>
+                <div class="guide-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-title">选择下载源</div>
+                        <div class="step-desc">点击上方“立即下载”按钮，或访问官方应用商店搜索“攻城掠地”。</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-title">安装包验证</div>
+                        <div class="step-desc">下载完成后，请检查文件大小及数字签名，确保来源可靠。</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-title">开始游戏</div>
+                        <div class="step-desc">安装完毕后，点击图标启动游戏，建议首次登录绑定官方账号。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="container" style="padding-bottom: 40px;">
+            <h2 class="section-title">常见问题解答</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <details style="margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--primary-color);">下载速度慢怎么办？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">建议检查网络连接，或尝试切换下载节点。如果是移动网络，建议切换至Wi-Fi环境。</p>
+                </details>
+                <details style="margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--primary-color);">游戏安装后无法打开？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">请检查手机系统版本是否满足最低要求（Android 5.0+ 或 iOS 10.0+），并尝试清理手机内存后重启应用。</p>
+                </details>
+                <details style="margin-bottom: 15px; background: white; padding: 15px; border-radius: 8px; cursor: pointer;">
+                    <summary style="font-weight: bold; color: var(--primary-color);">如何找回忘记的账号？</summary>
+                    <p style="margin-top: 10px; color: var(--text-light);">请提供注册时的手机号或绑定邮箱，联系官方客服进行身份验证后即可找回。</p>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于游戏</h4>
+                    <ul>
+                        <li><a href="#">游戏介绍</a></li>
+                        <li><a href="#">运营团队</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>支持与帮助</h4>
+                    <ul>
+                        <li><a href="#">新手攻略</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">防骗指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>游戏下载</h4>
+                    <ul>
+                        <li><a href="#">安卓版下载</a></li>
+                        <li><a href="#">iOS版下载</a></li>
+                        <li><a href="#">电脑模拟器版</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 攻城掠地官方运营团队 版权所有 | 未成年人模式指引</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+</html>
