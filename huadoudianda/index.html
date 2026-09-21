@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="花都电大官方招生门户，提供成人高等教育、开放大学学历提升、继续教育课程报名及学习指南。">
+    <meta name="keywords" content="花都电大, 广东开放大学, 成人教育, 继续教育, 电大报名, 学历提升">
+    <title>花都电大-成人高等教育与学历提升招生服务平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #00a8e8;
+            --accent-color: #f39c12;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-weight: normal;
+            font-size: 16px;
+            margin-left: 5px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .header-cta:hover {
+            background-color: #004494;
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-primary:hover, .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background-color: var(--white);
+            padding: 30px 0;
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* Programs Grid */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background: var(--white);
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        .program-icon {
+            height: 120px;
+            background-color: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary-color);
+        }
+
+        .program-info {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .program-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .program-info p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .program-tags {
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef6fc;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 5px;
+        }
+
+        .card-footer {
+            padding: 20px 25px;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+
+        .btn-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--accent-color);
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-text h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature-text p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* News List */
+        .news-section {
+            padding: 60px 0;
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .news-list {
+            border-left: 1px solid #eee;
+        }
+
+        .news-item {
+            padding: 20px 0 20px 30px;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 5px;
+        }
+
+        .news-title {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .news-title:hover {
+            color: var(--primary-color);
+        }
+
+        .sidebar-widget {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: var(--border-radius);
+        }
+
+        .sidebar-widget h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+        }
+
+        .process-list li {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .process-list strong {
+            color: var(--text-main);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            font-size: 14px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .footer-info p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .footer-links h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                gap: 15px;
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+
+            .news-list {
+                border-left: none;
+                border-top: 1px solid #eee;
+            }
+
+            .news-item {
+                padding: 15px 0 15px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .news-item::before {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                🎓 花都电大
+                <span>开放大学</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">招生简章</a></li>
+                    <li><a href="#">专业介绍</a></li>
+                    <li><a href="#">继续教育</a></li>
+                    <li><a href="#">学习中心</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header-cta">在线报名</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>提升学历，成就未来</h1>
+            <p>花都电大致力于为在职人员提供便捷、优质的成人高等教育服务。国家承认学历，学信网可查，轻松圆您大学梦。</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">查看专业目录</a>
+                <a href="#" class="btn btn-secondary">咨询招生老师</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h3>30+</h3>
+                <p>开设专业</p>
+            </div>
+            <div class="stat-item">
+                <h3>5000+</h3>
+                <p>在籍学员</p>
+            </div>
+            <div class="stat-item">
+                <h3>20+</h3>
+                <p>合作企业</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>就业率</p>
+            </div>
+        </div>
+    </div>
+
+    <main class="container main-content">
+        <section class="section-title">
+            <h2>热门招生专业</h2>
+            <p>结合市场需求与个人兴趣，提供多样化的学历提升方案</p>
+        </section>
+
+        <section class="programs-grid">
+            <!-- Program 1 -->
+            <article class="program-card">
+                <div class="program-icon">👨‍💻</div>
+                <div class="program-info">
+                    <h3>计算机科学与技术</h3>
+                    <p>培养具备计算机软硬件系统设计、开发与应用能力的工程技术人才，适合从事软件开发、网络管理等工作。</p>
+                    <div class="program-tags">
+                        <span class="tag">专升本</span>
+                        <span class="tag">理工类</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-link">查看详情 &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Program 2 -->
+            <article class="program-card">
+                <div class="program-icon">📊</div>
+                <div class="program-info">
+                    <h3>工商管理</h3>
+                    <p>系统学习管理学、经济学原理及企业运营管理知识，提升管理素养，助力职场晋升与创业。</p>
+                    <div class="program-tags">
+                        <span class="tag">专升本</span>
+                        <span class="tag">经管类</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-link">查看详情 &rarr;</a>
+                </div>
+            </article>
+
+            <!-- Program 3 -->
+            <article class="program-card">
+                <div class="program-icon">🏛️</div>
+                <div class="program-info">
+                    <h3>法学</h3>
+                    <p>掌握法学基本理论和专业知识，培养运用法律维护合法权益的专业人才，适合从事法律服务工作。</p>
+                    <div class="program-tags">
+                        <span class="tag">专升本</span>
+                        <span class="tag">法学类</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn-link">查看详情 &rarr;</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>为什么选择花都电大？</h2>
+                    <p>依托国家开放大学体系，为您提供全方位的学习支持</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">✅</div>
+                        <div class="feature-text">
+                            <h4>国家承认学历</h4>
+                            <p>学历证书可在教育部学历证书查询网站（学信网）查询，符合条件者可申请学士学位。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📚</div>
+                        <div class="feature-text">
+                            <h4>灵活的学习方式</h4>
+                            <p>采用“线上学习+线下辅导”相结合的模式，工学矛盾小，适合在职人员业余学习。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎓</div>
+                        <div class="feature-text">
+                            <h4>名师在线辅导</h4>
+                            <p>拥有经验丰富的专职教师团队，提供直播授课、录播回放及考前重点辅导。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>最新动态与资讯</h2>
+                </div>
+                <div class="news-container">
+                    <div class="news-list">
+                        <div class="news-item">
+                            <div class="news-date">2023-10-25</div>
+                            <a href="#" class="news-title">2024年春季学期招生报名工作正式启动</a>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-date">2023-10-20</div>
+                            <a href="#" class="news-title">关于开展2023年度教学检查工作的通知</a>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-date">2023-10-15</div>
+                            <a href="#" class="news-title">花都电大举办秋季毕业生典礼暨就业指导会</a>
+                        </div>
+                        <div class="news-item">
+                            <div class="news-date">2023-10-10</div>
+                            <a href="#" class="news-title">国家开放大学学习平台操作指南更新说明</a>
+                        </div>
+                    </div>
+                    <aside class="sidebar">
+                        <div class="sidebar-widget">
+                            <h3>报名流程</h3>
+                            <ul class="process-list">
+                                <li><strong>1. 咨询报名</strong><br>联系招生老师了解专业详情</li>
+                                <li><strong>2. 提交资料</strong><br>填写报名表并准备身份证复印件</li>
+                                <li><strong>3. 缴纳费用</strong><br>审核通过后缴纳学费</li>
+                                <li><strong>4. 入学注册</strong><br>领取教材，正式开始学习</li>
+                            </ul>
+                            <div style="margin-top:20px; text-align:center;">
+                                <a href="#" class="btn btn-primary" style="font-size:14px; padding:8px 20px;">立即咨询</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                    <p>解答您关于报名、考试、毕业等方面的疑问</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">花都电大毕业证国家承认吗？</div>
+                        <div class="faq-answer">是的，国家开放大学（原电大）是教育部直属高等学校，其学历证书在教育部电子注册，学信网可查，国家承认学历。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">报名需要什么条件？</div>
+                        <div class="faq-answer">报名者应具有国民教育系列高等专科及以上学历。报考本科层次需提供大专学历证书及电子注册备案表。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">学习形式是怎样的？</div>
+                        <div class="faq-answer">主要采用网络在线学习与面授辅导相结合的方式。平时通过学习平台观看视频课件、完成作业，期末参加统一考试。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">多久可以毕业？</div>
+                        <div class="faq-answer">通常学制为2.5年。学生修满教学计划规定的全部学分，成绩合格，即可获得国家承认的毕业证书。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>花都电大</h3>
+                    <p>花都电大（花都区广播电视大学）作为国家开放大学体系的重要组成单位，始终致力于构建服务全民的终身学习体系，为地方经济发展培养高素质应用型人才。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">学校概况</a></li>
+                        <li><a href="#">招生简章</a></li>
+                        <li><a href="#">专业设置</a></li>
+                        <li><a href="#">师资队伍</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>学习支持</h4>
+                    <ul>
+                        <li><a href="#">学习平台登录</a></li>
+                        <li><a href="#">考试安排</a></li>
+                        <li><a href="#">教材中心</a></li>
+                        <li><a href="#">在线咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：020-12345678</li>
+                        <li>地址：广州市花都区新华镇XX路XX号</li>
+                        <li>邮箱：admissions@huadu-open.edu.cn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 花都电大 版权所有 | 粤ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠逻辑
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // 关闭其他已打开的项
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // 切换当前项
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                  </html>
