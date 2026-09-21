@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>火炬之光2法师加点 - 深度技能构建与流派攻略指南</title>
+    <meta name="description" content="本站提供火炬之光2法师加点全攻略，涵盖纯冰霜、闪电风暴、混沌魔法等多种主流流派详解，包括技能树配置、天赋加点建议及实战技巧，助你轻松通关。">
+    <meta name="keywords" content="火炬之光2, 火炬之光2法师, 火炬之光2加点, 火炬之光2技能, 火炬之光2攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        /* 通用区块样式 */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        /* 流派选择卡片区 */
+        .builds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .build-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid transparent;
+        }
+
+        .build-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .build-card.ice { border-top-color: #3498db; }
+        .build-card.lightning { border-top-color: #f1c40f; }
+        .build-card.chaos { border-top-color: #9b59b6; }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #eee;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .card-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-features {
+            margin-bottom: 20px;
+        }
+
+        .card-features li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            color: #27ae60;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* 技能树详解表格 */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .skills-table th, .skills-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .skills-table th {
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: 600;
+        }
+
+        .skills-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .skills-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .skill-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 4px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* 资源与属性建议 */
+        .resource-section {
+            background-color: white;
+        }
+
+        .resource-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .resource-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            font-weight: 500;
+        }
+
+        .stat-value {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .stat-visual {
+            height: 300px;
+            background-color: #f0f2f5;
+            border-radius: var(--border-radius);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .stat-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary-color) 0% 70%, #eee 70% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .stat-circle::before {
+            content: '70%';
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: #fff;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            margin-bottom: 10px;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+            color: var(--text-light);
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ecf0f1;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .nav-links {
+                display: none; /* 移动端简化：隐藏导航链接 */
+            }
+
+            .resource-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-table {
+                font-size: 0.9rem;
+            }
+            
+            .skills-table th, .skills-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    Torchlight<span>Guide</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#builds">流派推荐</a>
+                    <a href="#skills">技能详解</a>
+                    <a href="#resources">属性配置</a>
+                    <a href="#faq">常见问题</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>火炬之光2法师加点</h1>
+                <p>从新手到精英，掌握元素与混沌魔法的核心奥秘。本文提供最全面的技能树配置、天赋选择建议及实战流派分析。</p>
+                <a href="#builds" class="btn">查看热门加点方案</a>
+            </div>
+        </section>
+
+        <section id="builds">
+            <div class="container">
+                <div class="section-title">
+                    <h2>主流法师流派推荐</h2>
+                    <p>根据您的游戏风格选择最适合的加点路线</p>
+                </div>
+                <div class="builds-grid">
+                    <!-- 流派1：冰霜 -->
+                    <article class="build-card ice">
+                        <div class="card-image">
+                            <!-- 使用picsum作为占位图，seed确保图片固定 -->
+                            <img src="https://picsum.photos/seed/ice/400/250" alt="冰霜法师">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">控制流</span>
+                            <h3>极寒领域</h3>
+                            <p>利用冰霜新星和冰霜新星（AOE）控制全场敌人，配合冰锥术进行单体爆发。适合喜欢稳扎稳打的玩家。</p>
+                            <ul class="card-features">
+                                <li>极高控制能力</li>
+                                <li>伤害稳定且持续</li>
+                                <li>操作相对简单</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-weight: bold;">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- 流派2：闪电 -->
+                    <article class="build-card lightning">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/light/400/250" alt="闪电法师">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">高爆发</span>
+                            <h3>雷神降临</h3>
+                            <p>专注于闪电风暴和闪电链的连锁反应。通过增加闪电伤害和降低抗性，实现瞬间秒杀怪物的快感。</p>
+                            <ul class="card-features">
+                                <li>瞬间爆发极高</li>
+                                <li>清屏效率快</li>
+                                <li>需注意电抗不足</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-weight: bold;">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- 流派3：混沌 -->
+                    <article class="build-card chaos">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/chaos/400/250" alt="混沌法师">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-tag">穿透流</span>
+                            <h3>混沌魔眼</h3>
+                            <p>利用混沌魔法无视敌人防御和抗性的特性。配合毁灭新星和混沌风暴，对高护甲和抗性怪物效果拔群。</p>
+                            <ul class="card-features">
+                                <li>无视防御机制</li>
+                                <li>应对高抗性BOSS</li>
+                                <li>装备依赖度较高</li>
+                            </ul>
+                            <a href="#" style="color: var(--primary-color); font-weight: bold;">查看详情 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="resource-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心技能加点详解</h2>
+                    <p>了解关键技能的机制与优先级</p>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="skills-table">
+                        <thead>
+                            <tr>
+                                <th width="25%">技能名称</th>
+                                <th width="25%">类型</th>
+                                <th width="25%">加点建议</th>
+                                <th width="25%">效果说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="skill-icon" style="background:#3498db"></span>冰霜新星</td>
+                                <td>AOE控制</td>
+                                <td>主力技能</td>
+                                <td>瞬间冻结周围敌人，打断施法，是法师保命与聚怪的核心。</td>
+                            </tr>
+                            <tr>
+                                <td><span class="skill-icon" style="background:#f1c40f"></span>闪电风暴</td>
+                                <td>远程伤害</td>
+                                <td>主力技能</td>
+                                <td>持续释放的AOE伤害，随着等级提升，覆盖范围和伤害大幅增加。</td>
+                            </tr>
+                            <tr>
+                                <td><span class="skill-icon" style="background:#9b59b6"></span>毁灭新星</td>
+                                <td>爆发技能</td>
+                                <td>点满</td>
+                                <td>以自身为中心释放AOE伤害，造成大量伤害并减速敌人。</td>
+                            </tr>
+                            <tr>
+                                <td><span class="skill-icon" style="background:#e74c3c"></span>冰锥术</td>
+                                <td>单体控制</td>
+                                <td>辅助技能</td>
+                                <td>向前方锥形区域释放冰锥，造成伤害并使其脆弱。</td>
+                            </tr>
+                            <tr>
+                                <td><span class="skill-icon" style="background:#2ecc71"></span>元素专注</td>
+                                <td>被动</td>
+                                <td>必点</td>
+                                <td>增加元素伤害，减少施法消耗，法师生存与输出的基石。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources">
+            <div class="container">
+                <div class="section-title">
+                    <h2>属性与装备建议</h2>
+                    <p>如何正确分配技能点与属性点</p>
+                </div>
+                <div class="resource-container">
+                    <div class="resource-info">
+                        <h3>属性点优先级</h3>
+                        <div class="stat-item">
+                            <span class="stat-label">智力 (INT)</span>
+                            <span class="stat-value">最高优先级</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">能量 (MANA)</span>
+                            <span class="stat-value">次优先级</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">耐力 (VIT)</span>
+                            <span class="stat-value">视流派而定</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">敏捷 (DEX)</span>
+                            <span class="stat-value">低优先级</span>
+                        </div>
+                        <p style="margin-top: 20px; color: #666;">
+                            法师的核心在于智力，直接决定技能伤害。能量决定了蓝量上限和回蓝速度，保证持续输出。耐力通常只加一点点以维持最低血量，确保不被秒杀。
+                        </p>
+                    </div>
+                    <div class="stat-visual">
+                        <div class="stat-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">法师前期加点应该全堆智力吗？</button>
+                    <div class="faq-answer">
+                        <p>前期智力确实最重要，但不要完全忽视能量。如果蓝量不足以支撑技能释放，你会因为空蓝而被怪物围攻。建议保持智力与能量 2:1 或 3:1 的比例。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">哪个技能是法师的“核心”？</button>
+                    <div class="faq-answer">
+                        <p>这取决于流派。冰霜流的核心是“冰霜新星”（控制），闪电流的核心是“闪电风暴”（持续AOE），混沌流则是“毁灭新星”（爆发）。但“元素专注”作为被动技能，对任何流派都是核心。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">如何应对高抗性的敌人？</button>
+                    <div class="faq-answer">
+                        <p>混沌魔法无视抗性，是应对高抗性敌人的最佳选择。此外，装备上寻找带有“抗性穿透”或“伤害百分比提升”属性的物品也能有效提升伤害。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Torchlight 2 Strategy Guide. All rights reserved.</p>
+            <p>本站内容仅供参考，游戏最终解释权归开发商所有。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的FAQ折叠交互
+        document.addEventListener('DOMContentLoaded', function() {
+            const questions = document.querySelectorAll('.faq-question');
+            
+            questions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // 关闭其他已打开的项
+                    questions.forEach(item => {
+                        if (item !== this) {
+                            item.classList.remove('active');
+                            item.nextElementSibling.style.maxHeight = null;
+                        }
+                    });
+                    
+                    // 切换当前项
+                    this.classList.toggle('active');
+                    const answer = this.nextElementSibling;
+                    if (this.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    } else {
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+                                                                                                                   </html>
