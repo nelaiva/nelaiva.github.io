@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="花花世界花花姐官方网站，专注于城市生活美学、时尚穿搭分享及品质生活指南，为您提供最新的潮流资讯与实用生活建议。">
+    <meta name="keywords" content="花花世界花花姐, 城市生活美学, 时尚穿搭, 生活指南">
+    <title>花花世界花花姐-城市生活美学与时尚穿搭指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --secondary-color: #6f42c1;
+            --accent-color: #ffc107;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(214, 51, 132, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://picsum.photos/seed/fashion/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Features / Philosophy */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Categories */
+        .categories {
+            margin-bottom: 4rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .category-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            height: 200px;
+            cursor: pointer;
+        }
+
+        .category-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s;
+        }
+
+        .category-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem 1rem 1rem;
+            color: white;
+        }
+
+        .category-overlay h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Latest Articles */
+        .articles {
+            margin-bottom: 4rem;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+
+        .article-image {
+            height: 220px;
+            width: 100%;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .article-meta {
+            font-size: 0.85rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 4rem 0;
+            border-radius: var(--border-radius);
+            margin-bottom: 4rem;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter h2 {
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem 1.2rem;
+            border-radius: 30px;
+            border: none;
+            outline: none;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #b0b0b0;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">花花世界花花姐</a>
+            <div class="mobile-toggle" onclick="toggleMenu()">☰</div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" class="active">首页</a>
+                <a href="#style">穿搭美学</a>
+                <a href="#life">品质生活</a>
+                <a href="#travel">城市探索</a>
+                <a href="#about">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>发现生活之美，定义你的独特风格</h1>
+                <p>花花世界花花姐致力于分享前沿时尚穿搭、精致生活方式及城市探索指南，助你轻松成为生活的主角。</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#style" class="btn btn-primary">探索穿搭</a>
+                    <a href="#life" class="btn btn-outline" style="border-color: white; color: white; margin-left: 1rem;">阅读指南</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Philosophy -->
+        <section class="container features">
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>每日灵感</h3>
+                <p>紧跟全球时尚潮流，为您提供每日更新的穿搭灵感与搭配技巧。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✈️</div>
+                <h3>城市漫游</h3>
+                <p>深入各大城市角落，挖掘隐秘的咖啡馆、画廊与特色街区。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☕</div>
+                <h3>品质生活</h3>
+                <p>精选家居好物与生活美学，分享如何将家打造成放松身心的港湾。</p>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="container categories" id="style">
+            <h2 class="section-title">热门分类</h2>
+            <div class="category-grid">
+                <div class="category-item">
+                    <img src="https://picsum.photos/seed/fashion1/400/300" alt="职场穿搭">
+                    <div class="category-overlay">
+                        <h4>职场穿搭</h4>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="https://picsum.photos/seed/fashion2/400/300" alt="周末休闲">
+                    <div class="category-overlay">
+                        <h4>周末休闲</h4>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="https://picsum.photos/seed/fashion3/400/300" alt="节日派对">
+                    <div class="category-overlay">
+                        <h4>节日派对</h4>
+                    </div>
+                </div>
+                <div class="category-item">
+                    <img src="https://picsum.photos/seed/fashion4/400/300" alt="旅行穿搭">
+                    <div class="category-overlay">
+                        <h4>旅行穿搭</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Articles -->
+        <section class="container articles" id="life">
+            <h2 class="section-title">精选内容</h2>
+            <div class="article-grid">
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/lifestyle1/400/300" alt="春季穿搭指南" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">时尚穿搭</div>
+                        <h3 class="article-title">2024春季色彩趋势：如何用莫兰迪色系打造温柔气质？</h3>
+                        <p class="article-excerpt">随着气温回暖，春季穿搭不再局限于黑白灰。本文将为您解析本季最流行的莫兰迪色系搭配技巧，让你在人群中脱颖而出...</p>
+                        <a href="#" class="read-more">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/lifestyle2/400/300" alt="家居好物" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">品质生活</div>
+                        <h3 class="article-title">小空间大智慧：10款提升居家幸福感的小物推荐</h3>
+                        <p class="article-excerpt">即使是狭小的出租屋，也能通过合理的布局和巧妙的小物装饰，营造出温馨舒适的居住环境。来看看花花姐为您精选的清单...</p>
+                        <a href="#" class="read-more">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/travel1/400/300" alt="城市探索" class="article-image">
+                    <div class="article-content">
+                        <div class="article-meta">城市探索</div>
+                        <h3 class="article-title">上海隐秘角落：除了外滩，这些地方更值得打卡</h3>
+                        <p class="article-excerpt">厌倦了人山人海的网红景点？带你走进上海那些充满艺术气息的弄堂与老洋房，感受这座城市独特的静谧与优雅。</p>
+                        <a href="#" class="read-more">阅读全文 &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="container">
+            <div class="newsletter">
+                <h2>订阅花花世界花花姐</h2>
+                <p>每周获取最新穿搭灵感、生活好物推荐及城市探店指南。</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('感谢您的订阅！我们会将最新资讯发送至您的邮箱。');">
+                    <input type="email" class="newsletter-input" placeholder="请输入您的电子邮箱" required>
+                    <button type="submit" class="btn btn-primary" style="background: white; color: var(--secondary-color);">立即订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>花花世界花花姐</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        我们致力于为现代都市女性提供最实用的时尚建议与生活方式指南。在这里，您不仅能找到穿搭灵感，更能发现生活的美好。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">免责声明</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门栏目</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">每日穿搭</a></li>
+                        <li><a href="#">家居美学</a></li>
+                        <li><a href="#">旅行日记</a></li>
+                        <li><a href="#">美妆护肤</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">WX</a>
+                        <a href="#" class="social-icon">WB</a>
+                        <a href="#" class="social-icon">IG</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 花花世界花花姐 版权所有. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    document.getElementById('navMenu').classList.remove('active');
+                    
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header Background on Scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+                  </html>
